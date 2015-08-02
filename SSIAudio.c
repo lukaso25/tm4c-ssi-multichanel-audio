@@ -12,11 +12,23 @@
 #include "driverlib/rom.h"
 #include "driverlib/sysctl.h"
 
+
+/* XOR control pin position USBADDA*/
+#define SSI_XOR_PIN	GPIO_PIN_7
+#define SSI_XOR_PORT GPIO_PORTD_BASE
+#define SSI_XOR_PORT_SYSCTRL	SYSCTL_PERIPH_GPIOD
+
+/* XOR control pin position Aardvark */
+/*#define SSI_XOR_PIN	GPIO_PIN_4
+#define SSI_XOR_PORT GPIO_PORTF_BASE
+#define SSI_XOR_PORT_SYSCTRL	SYSCTL_PERIPH_GPIOF*/
+
+
 /*  LR_CLK low to HIGH transition means left channel (AD1871, AKM4524 too),
  * 	SSI starts operation on   */
 
 // private data
-static volatile uint8_t SSI_fss_invert = SSI_XOR_PIN;
+volatile uint8_t SSI_fss_invert = SSI_XOR_PIN;
 
 // Feedback
 /*! public variable representing */
@@ -32,7 +44,7 @@ void SSIAudioInit( void)
 	uint32_t temp;
 
     uint32_t clock = SysCtlClockGet();
-    uint32_t SSIclk = 25000000;// pozor, víc nefunguje
+    uint32_t SSIclk = 20000000;// pozor, víc nefunguje
 
     // debug pin init
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
@@ -45,7 +57,7 @@ void SSIAudioInit( void)
     // LRclk: 0 - right ch, 1 - left ch
     // pokud bude zapnute, xor bude invertovat -> left bude použit pro SPI transfer
     // zapneme invert, první vzorek pøijde levý kanál
-    GPIOPinWrite(SSI_XOR_PORT, SSI_XOR_PIN, SSI_XOR_PIN);
+    GPIOPinWrite(SSI_XOR_PORT, SSI_XOR_PIN, SSI_XOR_PIN); //
     SSI_fss_invert = 0; // next state after first interrupt
 
 
@@ -125,10 +137,20 @@ void SSIAudioInit( void)
 
     // interrupt from the first SSI
     SSIIntEnable(SSI2_BASE, SSI_RXFF);
-    IntEnable(INT_SSI2_TM4C123);
 
-    // we should make sure to enable global interrupt
-    IntMasterEnable();
+    //int32_t prio;
+    //prio = IntPriorityGet(INT_SSI2_TM4C123);
+
+    IntEnable(INT_SSI2_TM4C123);
+}
+
+void SSIAudioIntEnable( void)
+{
+}
+
+void SSIAudioIntDisable ( void)
+{
+
 }
 
 void SSI2_IRQHandler( void)

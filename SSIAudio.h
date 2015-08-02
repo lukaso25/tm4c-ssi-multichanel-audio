@@ -23,11 +23,6 @@
 #define SSIAUDIO_CHANNELS (2)
 
 
-/* XOR control pin position */
-#define SSI_XOR_PIN	GPIO_PIN_7
-#define SSI_XOR_PORT GPIO_PORTD_BASE
-#define SSI_XOR_PORT_SYSCTRL	SYSCTL_PERIPH_GPIOD
-
 /* structure definition for byte oriented SSI data transfers of samples */
 struct SSIAudioSampleStruct
 {
