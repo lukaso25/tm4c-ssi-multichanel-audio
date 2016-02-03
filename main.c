@@ -98,7 +98,7 @@ void SystemInit( void)
 	//returnCode = SysCtlClockFreqSet(SYSCTL_OSC_MAIN | SYSCTL_CFG_VCO_480 ,80000000);
 	uint32_t clock = SysCtlClockGet();
 
-	clock = clock;
+	//clock = clock;
 
 	// todo: po nastavení zase zamknout?
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
