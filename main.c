@@ -86,7 +86,7 @@ int main( void)
 	SSIAudioInit();
 
 	while(1);
-	return 0;
+	return (0);
 }
 
 
