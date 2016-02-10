@@ -1,0 +1,66 @@
+#include "AudioADDAControl.h"
+
+
+uint16_t AnalogADDASPItransfer(uint8_t chip, uint16_t data);
+
+uint16_t AnalogADDASPItransfer(uint8_t chip, uint16_t data)
+{
+
+}
+
+
+
+uint16_t AnalogADDAControlInit( void)
+{
+	
+	
+
+	return (0);
+
+}
+
+uint32_t AudioADDAModePCM( uint32_t mode)
+{
+	return (-1);
+}
+
+
+uint32_t AnalogADDASetSampleRate( uint32_t rate )
+{
+	if (rate == actual_samplerate)
+	{
+		return (rate);
+	}
+	else
+	{
+		actual_samplerate = rate;
+	}
+	
+	
+	switch (rate)
+	{
+	case 44100:
+		break;
+	case 88200:
+		break;
+	case 48000:
+		break;
+	case 96000:
+		break;
+	default:
+		actual_samplerate = 0;
+		break;
+	}
+	
+	return (actual_samplerate);
+}
+
+void AudioADDASetInputGain( uint8_t channel, int16_t gain)
+{
+	return;
+}
+
+void AudioADDASetOutputAttenuation( uint8_t channel, int16_t atten)
+{
+	return;
+}

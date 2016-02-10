@@ -18,7 +18,7 @@
 
 
 /*! Public variable holding actual sample rate in Hz. */
-extern uint32_t actual_samplerate;
+extern uint32_t AudioADDACsamplerate;
 
 /*!
  * This function provide communication interface initialization, GPIO init, hard reset - possibly chips are put into reset state

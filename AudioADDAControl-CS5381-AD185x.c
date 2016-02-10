@@ -15,7 +15,7 @@
 
 //#include "main.h"
 
-uint32_t actual_samplerate;
+uint32_t AudioADDACsamplerate;
 //static uint16_t AD1871_0_gain_hp_amc, AD1871_1_mute_fmt, AD1871_2_mux_mck;
 static uint16_t AD185x_conf;
 const uint16_t volumeLookUp[128];
@@ -97,7 +97,7 @@ uint16_t AnalogADDAControlInit( void)
 
 	// crystal enable
 	GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
-	actual_samplerate = 48000;
+	AudioADDACsamplerate = 48000;
 
 #ifdef ADDA_ONLY_ONE_XTAL
 	#warning "Only for One crystal oscilator configuration - special situation!"
@@ -175,13 +175,13 @@ uint32_t AudioADDAModePCM( uint32_t mode)
 
 uint32_t AnalogADDASetSampleRate( uint32_t rate )
 {
-	if (rate == actual_samplerate)
+	if (rate == AudioADDACsamplerate)
 	{
 		return (rate);
 	}
 	else
 	{
-		actual_samplerate = rate;
+		AudioADDACsamplerate = rate;
 	}
 
 	//else
@@ -256,7 +256,7 @@ uint32_t AnalogADDASetSampleRate( uint32_t rate )
 		GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
 		break;
 	default:
-		actual_samplerate = 0;
+		AudioADDACsamplerate = 0;
 		break;
 	}
 
@@ -273,7 +273,7 @@ uint32_t AnalogADDASetSampleRate( uint32_t rate )
 	GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
 #endif
 
-	return (actual_samplerate);
+	return (AudioADDACsamplerate);
 }
 
 void AudioADDASetInputGain( uint8_t channel, int16_t gain)
