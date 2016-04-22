@@ -1,15 +1,5 @@
 #include "AudioADDAControl.h"
 
-
-uint16_t AnalogADDASPItransfer(uint8_t chip, uint16_t data);
-
-uint16_t AnalogADDASPItransfer(uint8_t chip, uint16_t data)
-{
-
-}
-
-
-
 uint16_t AnalogADDAControlInit( void)
 {
 	

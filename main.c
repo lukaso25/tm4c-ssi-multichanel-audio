@@ -75,7 +75,7 @@ void SSIAudioNewSampleCallback( union SSISample record[], union SSISample playba
 }
 
 void SystemInit( void);
-void SysTick_Handler(void);
+//void SysTick_Handler(void);
 
 int main( void)
 {
@@ -96,7 +96,8 @@ void SystemInit( void)
 
 	SysCtlClockSet(SYSCTL_SYSDIV_3 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ );
 	//returnCode = SysCtlClockFreqSet(SYSCTL_OSC_MAIN | SYSCTL_CFG_VCO_480 ,80000000);
-	uint32_t clock = SysCtlClockGet();
+
+	//uint32_t clock = SysCtlClockGet();
 
 	//clock = clock;
 
