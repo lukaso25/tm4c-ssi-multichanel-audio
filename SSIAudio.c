@@ -13,6 +13,11 @@
 #include "driverlib/sysctl.h"
 
 
+/* DEBUG pin position USBADDA*/
+#define SSI_DEBUG_PIN	GPIO_PIN_2
+#define SSI_DEBUG_PORT GPIO_PORTB_BASE
+#define SSI_DEBUG_PORT_SYSCTRL	SYSCTL_PERIPH_GPIOB
+
 /* XOR control pin position USBADDA*/
 #define SSI_XOR_PIN	GPIO_PIN_7
 #define SSI_XOR_PORT GPIO_PORTD_BASE
@@ -47,8 +52,8 @@ void SSIAudioInit( void)
     uint32_t SSIclk = 20000000;// pozor, víc nefunguje
 
     // debug pin init
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
-	GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_2);
+	SysCtlPeripheralEnable(SSI_DEBUG_PORT_SYSCTRL);
+	GPIOPinTypeGPIOOutput(SSI_DEBUG_PORT, SSI_DEBUG_PIN);
 
     // LRCLK->FSS control GPIO out pin
     SysCtlPeripheralEnable(SSI_XOR_PORT_SYSCTRL);
@@ -156,7 +161,7 @@ void SSIAudioIntDisable ( void)
 void SSI2_IRQHandler( void)
 {
 
-	HWREG(GPIO_PORTB_BASE + (GPIO_O_DATA + (GPIO_PIN_2 << 2))) = GPIO_PIN_2;
+	HWREG(SSI_DEBUG_PORT + (GPIO_O_DATA + (SSI_DEBUG_PIN << 2))) = SSI_DEBUG_PIN;
 	HWREG(SSI_XOR_PORT + (GPIO_O_DATA + (SSI_XOR_PIN << 2))) = SSI_fss_invert;
 
 	//TODO: kde je problém s pøehozením kanálù? strana ardvark nebo SSI?
@@ -355,6 +360,6 @@ void SSI2_IRQHandler( void)
 			SSIRecordBuff[SSIRecordIndex++] = SSIdataR[5];
 		}*/
 	}
-	HWREG(GPIO_PORTB_BASE + (GPIO_O_DATA + (GPIO_PIN_2 << 2))) = 0;
+	HWREG(SSI_DEBUG_PORT + (GPIO_O_DATA + (SSI_DEBUG_PIN << 2))) = 0;
 }
 

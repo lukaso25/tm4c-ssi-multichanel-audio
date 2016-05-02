@@ -1,7 +1,7 @@
 /*
- * File:           C:\Google Disk\USBAudioADAU1772\sigmaDSP1772\sigmaDSP1772_IC_1_PARAM.h
+ * File:           C:\GIT\tm4c-ssi-multichanel-audio\ADAU1772\sigmaDSP1772_IC_1_PARAM.h
  *
- * Created:        Thursday, April 21, 2016 9:23:29 PM
+ * Created:        Monday, May 02, 2016 10:24:59 PM
  * Description:    sigmaDSP1772:IC 1 parameter RAM definitions.
  *
  * This software is distributed in the hope that it will be useful,

@@ -6,7 +6,7 @@ int8_t AudioADDAControl_test( void)
 {
 	AudioADDAControlInit();
 
-	AudioADDAModePCM(0);
+	AudioADDAModePCM(1);
 
 	AudioADDASetSampleRate(44100);
 
@@ -16,6 +16,7 @@ int8_t AudioADDAControl_test( void)
 	AudioADDASetOutputAttenuation(0,0);
 	AudioADDASetOutputAttenuation(1,0);
 
+	AudioADDAModePCM(0);
 
 	return (0);
 }

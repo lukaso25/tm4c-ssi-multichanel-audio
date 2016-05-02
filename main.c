@@ -8,14 +8,13 @@
 #include "driverlib/pin_map.h"
 #include <driverlib/gpio.h>
 #include <driverlib/sysctl.h>
-//#define TARGET_IS_TM4C123_RB1
-//#include <driverlib/rom.h>
+#include <driverlib/rom.h>
 
 #include "tm4c_cmsis.h"
 
 
 #include "SSIAudio.h"
-
+#include "AudioADDAControl.h"
 
 
 //BiquadInstance peak, peak2;
@@ -75,14 +74,18 @@ void SSIAudioNewSampleCallback( union SSISample record[], union SSISample playba
 }
 
 void SystemInit( void);
-//void SysTick_Handler(void);
 
 int main( void)
 {
 
 	SystemInit();
 
+	AudioADDAControlInit();
+	AudioADDAModePCM(1);
 
+	while(1);
+
+	// nezapomenout upravit debug pin!!!!
 	SSIAudioInit();
 
 	while(1);
@@ -121,8 +124,8 @@ void SystemInit( void)
 
 uint32_t msTicks = 0;                                       /* Variable to store millisecond ticks */
 
-/*void SysTick_Handler(void)
+void SysTickHandler(void)
 {
-SysTick interrupt Handler. See startup file startup_LPC17xx.s for SysTick vector
+//SysTick interrupt Handler. See startup file startup_LPC17xx.s for SysTick vector
 	msTicks++;
-}*/
+}

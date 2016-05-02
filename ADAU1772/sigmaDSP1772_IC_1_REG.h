@@ -1,7 +1,7 @@
 /*
- * File:           C:\Google Disk\USBAudioADAU1772\sigmaDSP1772\sigmaDSP1772_IC_1_REG.h
+ * File:           C:\GIT\tm4c-ssi-multichanel-audio\ADAU1772\sigmaDSP1772_IC_1_REG.h
  *
- * Created:        Thursday, April 21, 2016 9:23:29 PM
+ * Created:        Monday, May 02, 2016 10:24:59 PM
  * Description:    sigmaDSP1772:IC 1 control register definitions.
  *
  * This software is distributed in the hope that it will be useful,
@@ -33,7 +33,7 @@
 /* PLL_CTRL1  - Registers (IC 1) */
 #define REG_PLL_CTRL1_IC_1_ADDR                   0x2
 #define REG_PLL_CTRL1_IC_1_BYTE                   1
-#define REG_PLL_CTRL1_IC_1_VALUE                  0x0
+#define REG_PLL_CTRL1_IC_1_VALUE                  0x1
 
 /* PLL_CTRL2  - Registers (IC 1) */
 #define REG_PLL_CTRL2_IC_1_ADDR                   0x3
@@ -48,7 +48,7 @@
 /* PLL_CTRL4  - Registers (IC 1) */
 #define REG_PLL_CTRL4_IC_1_ADDR                   0x5
 #define REG_PLL_CTRL4_IC_1_BYTE                   1
-#define REG_PLL_CTRL4_IC_1_VALUE                  0x20
+#define REG_PLL_CTRL4_IC_1_VALUE                  0x10
 
 /* PLL_CTRL5  - Registers (IC 1) */
 #define REG_PLL_CTRL5_IC_1_ADDR                   0x6
@@ -63,7 +63,7 @@
 /* REGULATOR  - Registers (IC 1) */
 #define REG_REGULATOR_IC_1_ADDR                   0x8
 #define REG_REGULATOR_IC_1_BYTE                   1
-#define REG_REGULATOR_IC_1_VALUE                  0x1
+#define REG_REGULATOR_IC_1_VALUE                  0x0
 
 /* CORE_CONTROL  - Registers (IC 1) */
 #define REG_CORE_CONTROL_IC_1_ADDR                0x9
@@ -158,12 +158,12 @@
 /* ADC_CONTROL0  - Registers (IC 1) */
 #define REG_ADC_CONTROL0_IC_1_ADDR                0x1B
 #define REG_ADC_CONTROL0_IC_1_BYTE                1
-#define REG_ADC_CONTROL0_IC_1_VALUE               0x1
+#define REG_ADC_CONTROL0_IC_1_VALUE               0x0
 
 /* ADC_CONTROL1  - Registers (IC 1) */
 #define REG_ADC_CONTROL1_IC_1_ADDR                0x1C
 #define REG_ADC_CONTROL1_IC_1_BYTE                1
-#define REG_ADC_CONTROL1_IC_1_VALUE               0x1
+#define REG_ADC_CONTROL1_IC_1_VALUE               0x0
 
 /* ADC_CONTROL2  - Registers (IC 1) */
 #define REG_ADC_CONTROL2_IC_1_ADDR                0x1D
@@ -198,22 +198,22 @@
 /* PGA_CONTROL_0  - Registers (IC 1) */
 #define REG_PGA_CONTROL_0_IC_1_ADDR               0x23
 #define REG_PGA_CONTROL_0_IC_1_BYTE               1
-#define REG_PGA_CONTROL_0_IC_1_VALUE              0x6B
+#define REG_PGA_CONTROL_0_IC_1_VALUE              0xA8
 
 /* PGA_CONTROL_1  - Registers (IC 1) */
 #define REG_PGA_CONTROL_1_IC_1_ADDR               0x24
 #define REG_PGA_CONTROL_1_IC_1_BYTE               1
-#define REG_PGA_CONTROL_1_IC_1_VALUE              0x6B
+#define REG_PGA_CONTROL_1_IC_1_VALUE              0xA8
 
 /* PGA_CONTROL_2  - Registers (IC 1) */
 #define REG_PGA_CONTROL_2_IC_1_ADDR               0x25
 #define REG_PGA_CONTROL_2_IC_1_BYTE               1
-#define REG_PGA_CONTROL_2_IC_1_VALUE              0x6B
+#define REG_PGA_CONTROL_2_IC_1_VALUE              0xA8
 
 /* PGA_CONTROL_3  - Registers (IC 1) */
 #define REG_PGA_CONTROL_3_IC_1_ADDR               0x26
 #define REG_PGA_CONTROL_3_IC_1_BYTE               1
-#define REG_PGA_CONTROL_3_IC_1_VALUE              0x6B
+#define REG_PGA_CONTROL_3_IC_1_VALUE              0xA8
 
 /* PGA_STEP_CONTROL  - Registers (IC 1) */
 #define REG_PGA_STEP_CONTROL_IC_1_ADDR            0x27
@@ -228,7 +228,7 @@
 /* POP_SUPPRESS  - Registers (IC 1) */
 #define REG_POP_SUPPRESS_IC_1_ADDR                0x29
 #define REG_POP_SUPPRESS_IC_1_BYTE                1
-#define REG_POP_SUPPRESS_IC_1_VALUE               0x3F
+#define REG_POP_SUPPRESS_IC_1_VALUE               0x30
 
 /* TALKTHRU  - Registers (IC 1) */
 #define REG_TALKTHRU_IC_1_ADDR                    0x2A
@@ -248,7 +248,7 @@
 /* MIC_BIAS  - Registers (IC 1) */
 #define REG_MIC_BIAS_IC_1_ADDR                    0x2D
 #define REG_MIC_BIAS_IC_1_BYTE                    1
-#define REG_MIC_BIAS_IC_1_VALUE                   0x30
+#define REG_MIC_BIAS_IC_1_VALUE                   0x0
 
 /* DAC_CONTROL1  - Registers (IC 1) */
 #define REG_DAC_CONTROL1_IC_1_ADDR                0x2E
@@ -258,12 +258,12 @@
 /* DAC0_VOLUME  - Registers (IC 1) */
 #define REG_DAC0_VOLUME_IC_1_ADDR                 0x2F
 #define REG_DAC0_VOLUME_IC_1_BYTE                 1
-#define REG_DAC0_VOLUME_IC_1_VALUE                0x0
+#define REG_DAC0_VOLUME_IC_1_VALUE                0x6E
 
 /* DAC1_VOLUME  - Registers (IC 1) */
 #define REG_DAC1_VOLUME_IC_1_ADDR                 0x30
 #define REG_DAC1_VOLUME_IC_1_BYTE                 1
-#define REG_DAC1_VOLUME_IC_1_VALUE                0x0
+#define REG_DAC1_VOLUME_IC_1_VALUE                0x6C
 
 /* OP_STAGE_MUTES  - Registers (IC 1) */
 #define REG_OP_STAGE_MUTES_IC_1_ADDR              0x31
@@ -273,17 +273,17 @@
 /* SAI_0  - Registers (IC 1) */
 #define REG_SAI_0_IC_1_ADDR                       0x32
 #define REG_SAI_0_IC_1_BYTE                       1
-#define REG_SAI_0_IC_1_VALUE                      0x0
+#define REG_SAI_0_IC_1_VALUE                      0x40
 
 /* SAI_1  - Registers (IC 1) */
 #define REG_SAI_1_IC_1_ADDR                       0x33
 #define REG_SAI_1_IC_1_BYTE                       1
-#define REG_SAI_1_IC_1_VALUE                      0x0
+#define REG_SAI_1_IC_1_VALUE                      0x1
 
 /* SOUT_CONTROL0  - Registers (IC 1) */
 #define REG_SOUT_CONTROL0_IC_1_ADDR               0x34
 #define REG_SOUT_CONTROL0_IC_1_BYTE               1
-#define REG_SOUT_CONTROL0_IC_1_VALUE              0x0
+#define REG_SOUT_CONTROL0_IC_1_VALUE              0xFF
 
 /* SOUT_CONTROL1  - Registers (IC 1) */
 #define REG_SOUT_CONTROL1_IC_1_ADDR               0x35
@@ -363,22 +363,22 @@
 /* DECIM_PWR_MODES  - Registers (IC 1) */
 #define REG_DECIM_PWR_MODES_IC_1_ADDR             0x44
 #define REG_DECIM_PWR_MODES_IC_1_BYTE             1
-#define REG_DECIM_PWR_MODES_IC_1_VALUE            0xF
+#define REG_DECIM_PWR_MODES_IC_1_VALUE            0xFF
 
 /* INTERP_PWR_MODES  - Registers (IC 1) */
 #define REG_INTERP_PWR_MODES_IC_1_ADDR            0x45
 #define REG_INTERP_PWR_MODES_IC_1_BYTE            1
-#define REG_INTERP_PWR_MODES_IC_1_VALUE           0xC
+#define REG_INTERP_PWR_MODES_IC_1_VALUE           0xF
 
 /* BIAS_CONTROL0  - Registers (IC 1) */
 #define REG_BIAS_CONTROL0_IC_1_ADDR               0x46
 #define REG_BIAS_CONTROL0_IC_1_BYTE               1
-#define REG_BIAS_CONTROL0_IC_1_VALUE              0x0
+#define REG_BIAS_CONTROL0_IC_1_VALUE              0xAA
 
 /* BIAS_CONTROL1  - Registers (IC 1) */
 #define REG_BIAS_CONTROL1_IC_1_ADDR               0x47
 #define REG_BIAS_CONTROL1_IC_1_BYTE               1
-#define REG_BIAS_CONTROL1_IC_1_VALUE              0x0
+#define REG_BIAS_CONTROL1_IC_1_VALUE              0x2A
 
 /* PAD_CONTROL0  - Registers (IC 1) */
 #define REG_PAD_CONTROL0_IC_1_ADDR                0x48
@@ -451,7 +451,7 @@
 #define R1_M_MSB_IC_1_SHIFT                       0
 
 /* PLL_CTRL1 (IC 1) */
-#define R2_M_LSB_IC_1                             0x00   /* 00000000b	[7:0] */
+#define R2_M_LSB_IC_1                             0x01   /* 00000001b	[7:0] */
 #define R2_M_LSB_IC_1_MASK                        0xFF
 #define R2_M_LSB_IC_1_SHIFT                       0
 
@@ -468,7 +468,7 @@
 /* PLL_CTRL4 (IC 1) */
 #define R5_PLL_TYPE_IC_1                          0x0    /* 0b	[0] */
 #define R5_X_IC_1                                 0x0    /* 00b	[2:1] */
-#define R5_R_IC_1                                 0x4    /* 0100b	[6:3] */
+#define R5_R_IC_1                                 0x2    /* 0010b	[6:3] */
 #define R5_PLL_TYPE_IC_1_MASK                     0x1
 #define R5_PLL_TYPE_IC_1_SHIFT                    0
 #define R5_X_IC_1_MASK                            0x6
@@ -487,7 +487,7 @@
 #define R7_CLKOUT_FREQ_IC_1_SHIFT                 0
 
 /* REGULATOR (IC 1) */
-#define R8_REGV_IC_1                              0x1    /* 01b	[1:0] */
+#define R8_REGV_IC_1                              0x0    /* 00b	[1:0] */
 #define R8_REG_PD_IC_1                            0x0    /* 0b	[2] */
 #define R8_REGV_IC_1_MASK                         0x3
 #define R8_REGV_IC_1_SHIFT                        0
@@ -639,7 +639,7 @@
 #define R26_ASRC_IN_CH_IC_1_SHIFT                 2
 
 /* ADC_CONTROL0 (IC 1) */
-#define R27_ADC_0_1_FS_IC_1                       0x1    /* 01b	[1:0] */
+#define R27_ADC_0_1_FS_IC_1                       0x0    /* 00b	[1:0] */
 #define R27_ADC0_MUTE_IC_1                        0x0    /* 0b	[3] */
 #define R27_ADC1_MUTE_IC_1                        0x0    /* 0b	[4] */
 #define R27_ADC_0_1_SINC_IC_1                     0x0    /* 0b	[5] */
@@ -653,7 +653,7 @@
 #define R27_ADC_0_1_SINC_IC_1_SHIFT               5
 
 /* ADC_CONTROL1 (IC 1) */
-#define R28_ADC_2_3_FS_IC_1                       0x1    /* 01b	[1:0] */
+#define R28_ADC_2_3_FS_IC_1                       0x0    /* 00b	[1:0] */
 #define R28_ADC2_MUTE_IC_1                        0x0    /* 0b	[3] */
 #define R28_ADC3_MUTE_IC_1                        0x0    /* 0b	[4] */
 #define R28_ADC_2_3_SINC_IC_1                     0x0    /* 0b	[5] */
@@ -727,9 +727,9 @@
 #define R34_ADC_3_VOL_IC_1_SHIFT                  0
 
 /* PGA_CONTROL_0 (IC 1) */
-#define R35_PGA_GAIN0_IC_1                        0x2B   /* 101011b	[5:0] */
-#define R35_PGA_MUTE0_IC_1                        0x1    /* 1b	[6] */
-#define R35_PGA_EN0_IC_1                          0x0    /* 0b	[7] */
+#define R35_PGA_GAIN0_IC_1                        0x28   /* 101000b	[5:0] */
+#define R35_PGA_MUTE0_IC_1                        0x0    /* 0b	[6] */
+#define R35_PGA_EN0_IC_1                          0x1    /* 1b	[7] */
 #define R35_PGA_GAIN0_IC_1_MASK                   0x3F
 #define R35_PGA_GAIN0_IC_1_SHIFT                  0
 #define R35_PGA_MUTE0_IC_1_MASK                   0x40
@@ -738,9 +738,9 @@
 #define R35_PGA_EN0_IC_1_SHIFT                    7
 
 /* PGA_CONTROL_1 (IC 1) */
-#define R36_PGA_GAIN1_IC_1                        0x2B   /* 101011b	[5:0] */
-#define R36_PGA_MUTE1_IC_1                        0x1    /* 1b	[6] */
-#define R36_PGA_EN1_IC_1                          0x0    /* 0b	[7] */
+#define R36_PGA_GAIN1_IC_1                        0x28   /* 101000b	[5:0] */
+#define R36_PGA_MUTE1_IC_1                        0x0    /* 0b	[6] */
+#define R36_PGA_EN1_IC_1                          0x1    /* 1b	[7] */
 #define R36_PGA_GAIN1_IC_1_MASK                   0x3F
 #define R36_PGA_GAIN1_IC_1_SHIFT                  0
 #define R36_PGA_MUTE1_IC_1_MASK                   0x40
@@ -749,9 +749,9 @@
 #define R36_PGA_EN1_IC_1_SHIFT                    7
 
 /* PGA_CONTROL_2 (IC 1) */
-#define R37_PGA_GAIN2_IC_1                        0x2B   /* 101011b	[5:0] */
-#define R37_PGA_MUTE2_IC_1                        0x1    /* 1b	[6] */
-#define R37_PGA_EN2_IC_1                          0x0    /* 0b	[7] */
+#define R37_PGA_GAIN2_IC_1                        0x28   /* 101000b	[5:0] */
+#define R37_PGA_MUTE2_IC_1                        0x0    /* 0b	[6] */
+#define R37_PGA_EN2_IC_1                          0x1    /* 1b	[7] */
 #define R37_PGA_GAIN2_IC_1_MASK                   0x3F
 #define R37_PGA_GAIN2_IC_1_SHIFT                  0
 #define R37_PGA_MUTE2_IC_1_MASK                   0x40
@@ -760,9 +760,9 @@
 #define R37_PGA_EN2_IC_1_SHIFT                    7
 
 /* PGA_CONTROL_3 (IC 1) */
-#define R38_PGA_GAIN3_IC_1                        0x2B   /* 101011b	[5:0] */
-#define R38_PGA_MUTE3_IC_1                        0x1    /* 1b	[6] */
-#define R38_PGA_EN3_IC_1                          0x0    /* 0b	[7] */
+#define R38_PGA_GAIN3_IC_1                        0x28   /* 101000b	[5:0] */
+#define R38_PGA_MUTE3_IC_1                        0x0    /* 0b	[6] */
+#define R38_PGA_EN3_IC_1                          0x1    /* 1b	[7] */
 #define R38_PGA_GAIN3_IC_1_MASK                   0x3F
 #define R38_PGA_GAIN3_IC_1_SHIFT                  0
 #define R38_PGA_MUTE3_IC_1_MASK                   0x40
@@ -802,10 +802,10 @@
 #define R40_PGA_3_BOOST_IC_1_SHIFT                3
 
 /* POP_SUPPRESS (IC 1) */
-#define R41_PGA_POP_DIS0_IC_1                     0x1    /* 1b	[0] */
-#define R41_PGA_POP_DIS1_IC_1                     0x1    /* 1b	[1] */
-#define R41_PGA_POP_DIS2_IC_1                     0x1    /* 1b	[2] */
-#define R41_PGA_POP_DIS3_IC_1                     0x1    /* 1b	[3] */
+#define R41_PGA_POP_DIS0_IC_1                     0x0    /* 0b	[0] */
+#define R41_PGA_POP_DIS1_IC_1                     0x0    /* 0b	[1] */
+#define R41_PGA_POP_DIS2_IC_1                     0x0    /* 0b	[2] */
+#define R41_PGA_POP_DIS3_IC_1                     0x0    /* 0b	[3] */
 #define R41_HP_POP_DIS0_IC_1                      0x1    /* 1b	[4] */
 #define R41_HP_POP_DIS1_IC_1                      0x1    /* 1b	[5] */
 #define R41_PGA_POP_DIS0_IC_1_MASK                0x1
@@ -841,8 +841,8 @@
 #define R45_MIC_GAIN1_IC_1                        0x0    /* 0b	[1] */
 #define R45_MIC_HI_PERF0_IC_1                     0x0    /* 0b	[2] */
 #define R45_MIC_HI_PERF1_IC_1                     0x0    /* 0b	[3] */
-#define R45_MIC_EN0_IC_1                          0x1    /* 1b	[4] */
-#define R45_MIC_EN1_IC_1                          0x1    /* 1b	[5] */
+#define R45_MIC_EN0_IC_1                          0x0    /* 0b	[4] */
+#define R45_MIC_EN1_IC_1                          0x0    /* 0b	[5] */
 #define R45_MIC_GAIN0_IC_1_MASK                   0x1
 #define R45_MIC_GAIN0_IC_1_SHIFT                  0
 #define R45_MIC_GAIN1_IC_1_MASK                   0x2
@@ -874,12 +874,12 @@
 #define R46_DAC_POL_IC_1_SHIFT                    5
 
 /* DAC0_VOLUME (IC 1) */
-#define R47_DAC_0_VOL_IC_1                        0x00   /* 00000000b	[7:0] */
+#define R47_DAC_0_VOL_IC_1                        0x6E   /* 01101110b	[7:0] */
 #define R47_DAC_0_VOL_IC_1_MASK                   0xFF
 #define R47_DAC_0_VOL_IC_1_SHIFT                  0
 
 /* DAC1_VOLUME (IC 1) */
-#define R48_DAC_1_VOL_IC_1                        0x00   /* 00000000b	[7:0] */
+#define R48_DAC_1_VOL_IC_1                        0x6C   /* 01101100b	[7:0] */
 #define R48_DAC_1_VOL_IC_1_MASK                   0xFF
 #define R48_DAC_1_VOL_IC_1_SHIFT                  0
 
@@ -894,7 +894,7 @@
 /* SAI_0 (IC 1) */
 #define R50_SER_PORT_FS_IC_1                      0x0    /* 0000b	[3:0] */
 #define R50_SAI_IC_1                              0x0    /* 00b	[5:4] */
-#define R50_SDATA_FMT_IC_1                        0x0    /* 00b	[7:6] */
+#define R50_SDATA_FMT_IC_1                        0x1    /* 01b	[7:6] */
 #define R50_SER_PORT_FS_IC_1_MASK                 0xF
 #define R50_SER_PORT_FS_IC_1_SHIFT                0
 #define R50_SAI_IC_1_MASK                         0x30
@@ -903,7 +903,7 @@
 #define R50_SDATA_FMT_IC_1_SHIFT                  6
 
 /* SAI_1 (IC 1) */
-#define R51_SAI_MS_IC_1                           0x0    /* 0b	[0] */
+#define R51_SAI_MS_IC_1                           0x1    /* 1b	[0] */
 #define R51_BCLKEDGE_IC_1                         0x0    /* 0b	[1] */
 #define R51_BCLKRATE_IC_1                         0x0    /* 0b	[2] */
 #define R51_SAI_MSB_IC_1                          0x0    /* 0b	[3] */
@@ -929,14 +929,14 @@
 #define R51_TDM_TS_IC_1_SHIFT                     7
 
 /* SOUT_CONTROL0 (IC 1) */
-#define R52_TDM0_DIS_IC_1                         0x0    /* 0b	[0] */
-#define R52_TDM1_DIS_IC_1                         0x0    /* 0b	[1] */
-#define R52_TDM2_DIS_IC_1                         0x0    /* 0b	[2] */
-#define R52_TDM3_DIS_IC_1                         0x0    /* 0b	[3] */
-#define R52_TDM4_DIS_IC_1                         0x0    /* 0b	[4] */
-#define R52_TDM5_DIS_IC_1                         0x0    /* 0b	[5] */
-#define R52_TDM6_DIS_IC_1                         0x0    /* 0b	[6] */
-#define R52_TDM7_DIS_IC_1                         0x0    /* 0b	[7] */
+#define R52_TDM0_DIS_IC_1                         0x1    /* 1b	[0] */
+#define R52_TDM1_DIS_IC_1                         0x1    /* 1b	[1] */
+#define R52_TDM2_DIS_IC_1                         0x1    /* 1b	[2] */
+#define R52_TDM3_DIS_IC_1                         0x1    /* 1b	[3] */
+#define R52_TDM4_DIS_IC_1                         0x1    /* 1b	[4] */
+#define R52_TDM5_DIS_IC_1                         0x1    /* 1b	[5] */
+#define R52_TDM6_DIS_IC_1                         0x1    /* 1b	[6] */
+#define R52_TDM7_DIS_IC_1                         0x1    /* 1b	[7] */
 #define R52_TDM0_DIS_IC_1_MASK                    0x1
 #define R52_TDM0_DIS_IC_1_SHIFT                   0
 #define R52_TDM1_DIS_IC_1_MASK                    0x2
@@ -1048,10 +1048,10 @@
 #define R66_SINC_1_EN_IC_1                        0x1    /* 1b	[1] */
 #define R66_SINC_2_EN_IC_1                        0x1    /* 1b	[2] */
 #define R66_SINC_3_EN_IC_1                        0x1    /* 1b	[3] */
-#define R66_DEC_0_EN_IC_1                         0x0    /* 0b	[4] */
-#define R66_DEC_1_EN_IC_1                         0x0    /* 0b	[5] */
-#define R66_DEC_2_EN_IC_1                         0x0    /* 0b	[6] */
-#define R66_DEC_3_EN_IC_1                         0x0    /* 0b	[7] */
+#define R66_DEC_0_EN_IC_1                         0x1    /* 1b	[4] */
+#define R66_DEC_1_EN_IC_1                         0x1    /* 1b	[5] */
+#define R66_DEC_2_EN_IC_1                         0x1    /* 1b	[6] */
+#define R66_DEC_3_EN_IC_1                         0x1    /* 1b	[7] */
 #define R66_SINC_0_EN_IC_1_MASK                   0x1
 #define R66_SINC_0_EN_IC_1_SHIFT                  0
 #define R66_SINC_1_EN_IC_1_MASK                   0x2
@@ -1070,8 +1070,8 @@
 #define R66_DEC_3_EN_IC_1_SHIFT                   7
 
 /* INTERP_PWR_MODES (IC 1) */
-#define R67_INT_0_EN_IC_1                         0x0    /* 0b	[0] */
-#define R67_INT_1_EN_IC_1                         0x0    /* 0b	[1] */
+#define R67_INT_0_EN_IC_1                         0x1    /* 1b	[0] */
+#define R67_INT_1_EN_IC_1                         0x1    /* 1b	[1] */
 #define R67_MOD_0_EN_IC_1                         0x1    /* 1b	[2] */
 #define R67_MOD_1_EN_IC_1                         0x1    /* 1b	[3] */
 #define R67_INT_0_EN_IC_1_MASK                    0x1
@@ -1084,10 +1084,10 @@
 #define R67_MOD_1_EN_IC_1_SHIFT                   3
 
 /* BIAS_CONTROL0 (IC 1) */
-#define R68_ADC_IBIAS01_IC_1                      0x0    /* 00b	[1:0] */
-#define R68_ADC_IBIAS23_IC_1                      0x0    /* 00b	[3:2] */
-#define R68_AFE_IBIAS01_IC_1                      0x0    /* 00b	[5:4] */
-#define R68_HP_IBIAS_IC_1                         0x0    /* 00b	[7:6] */
+#define R68_ADC_IBIAS01_IC_1                      0x2    /* 10b	[1:0] */
+#define R68_ADC_IBIAS23_IC_1                      0x2    /* 10b	[3:2] */
+#define R68_AFE_IBIAS01_IC_1                      0x2    /* 10b	[5:4] */
+#define R68_HP_IBIAS_IC_1                         0x2    /* 10b	[7:6] */
 #define R68_ADC_IBIAS01_IC_1_MASK                 0x3
 #define R68_ADC_IBIAS01_IC_1_SHIFT                0
 #define R68_ADC_IBIAS23_IC_1_MASK                 0xC
@@ -1098,9 +1098,9 @@
 #define R68_HP_IBIAS_IC_1_SHIFT                   6
 
 /* BIAS_CONTROL1 (IC 1) */
-#define R69_DAC_IBIAS_IC_1                        0x0    /* 00b	[1:0] */
-#define R69_MIC_IBIAS_IC_1                        0x0    /* 00b	[3:2] */
-#define R69_AFE_IBIAS23_IC_1                      0x0    /* 00b	[5:4] */
+#define R69_DAC_IBIAS_IC_1                        0x2    /* 10b	[1:0] */
+#define R69_MIC_IBIAS_IC_1                        0x2    /* 10b	[3:2] */
+#define R69_AFE_IBIAS23_IC_1                      0x2    /* 10b	[5:4] */
 #define R69_CBIAS_DIS_IC_1                        0x0    /* 0b	[6] */
 #define R69_DAC_IBIAS_IC_1_MASK                   0x3
 #define R69_DAC_IBIAS_IC_1_SHIFT                  0
