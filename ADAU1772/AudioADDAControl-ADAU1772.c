@@ -7,7 +7,8 @@ LRCLK XOR control PA2
 FSS PF3 PD1
 BCLK PF2 PD0
 DAC PF1
-ADC PD2 PF0
+ADC0 PD2
+ADC1 PF0
 
 #PD PB2
 I2C1 SCL PA6
@@ -37,7 +38,7 @@ I2C1 SDA PA7
 
 void I2C_1772_burst( uint8_t I2Cadr, uint16_t adr, uint16_t length, uint8_t * data);
 
-#define ADAU1772_I2S_SAMPLERATE		(48000)
+#define ADAU1772_I2S_SAMPLERATE		(44100)
 #define ADAU1772_I2C_SLAVE_ADDRESS  (0x3C)
 #define ADAU1772_I2C_BASE I2C1_BASE
 
@@ -56,16 +57,17 @@ void I2C_1772_burst( uint8_t I2Cadr, uint16_t adr, uint16_t length, uint8_t * da
 		return;
 	}
 
+	// Sigma Studio code workaround
 	//I2CMasterSlaveAddrSet(ADAU1772_I2C_BASE, I2Cadr, false);
 	I2CMasterSlaveAddrSet(ADAU1772_I2C_BASE, ADAU1772_I2C_SLAVE_ADDRESS, false);
 
 	//I2C start
 	//byte adress
-	I2CMasterDataPut(ADAU1772_I2C_BASE, adr>>8);
+	I2CMasterDataPut(ADAU1772_I2C_BASE, (adr>>8));
 	I2CMasterControl(ADAU1772_I2C_BASE, I2C_MASTER_CMD_BURST_SEND_START);
 	while(I2CMasterBusy(ADAU1772_I2C_BASE));
 
-	I2CMasterDataPut(ADAU1772_I2C_BASE, adr&0xFF);
+	I2CMasterDataPut(ADAU1772_I2C_BASE, (adr&0xFF));
 	I2CMasterControl(ADAU1772_I2C_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
 	while(I2CMasterBusy(ADAU1772_I2C_BASE));
 
@@ -115,10 +117,12 @@ uint32_t AudioADDAModePCM( uint32_t mode)
 		// PD = 1
 		GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_2, GPIO_PIN_2);
 
-		SysCtlDelay(1000);
+		SysCtlDelay(100000);
 
 		// sigmastudio init
 		default_download_IC_1();
+
+
 	}
 	else
 	{
@@ -138,10 +142,26 @@ uint32_t AudioADDASetSampleRate( uint32_t rate )
 
 void AudioADDASetInputGain( uint8_t channel, int16_t gain)
 {
+	/*
+
+	uint8_t data;
+
+	data = 0;
+	I2C_1772_burst(ADAU1772_I2C_SLAVE_ADDRESS, 0,1, &data);
+
+	*/
 	return;
 }
 
 void AudioADDASetOutputAttenuation( uint8_t channel, int16_t atten)
 {
+	/*uint8_t data;
+
+			data = 0;
+			I2C_1772_burst(ADAU1772_I2C_SLAVE_ADDRESS, 0,1, &data);
+
+			data = 0;
+			I2C_1772_burst(ADAU1772_I2C_SLAVE_ADDRESS, 0,1, &data);
+			 */
 	return;
 }

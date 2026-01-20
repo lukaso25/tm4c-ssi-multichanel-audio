@@ -1,7 +1,7 @@
 /*
  * File:           defines.h
  *
- * Created:        Monday, May 02, 2016 10:24:59 PM
+ * Created:        Monday, May 09, 2016 11:18:03 PM
  * Description:    sigmaDSP1772 IC default download data definitions.
  *
  * This software is distributed in the hope that it will be useful,
@@ -19,8 +19,8 @@
 #ifndef __DEFINES_H__
 #define __DEFINES_H__
 
-#define BufferSize_IC_1     	1612
-#define NumTransactions_IC_1	90
+#define BufferSize_IC_1     	328
+#define NumTransactions_IC_1	88
 
 
 #endif

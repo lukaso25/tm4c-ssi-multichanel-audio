@@ -24,8 +24,8 @@ void SSIAudioNewSampleCallback( union SSISample record[], union SSISample playba
 
 	// normalization of inputs
 	//(left justified -> right justified 24 bit in 32 bit number -> better for signal processing)
-	record[0].sample >>= 8;
-	record[1].sample >>= 8;
+	//record[0].sample >>= 8;
+	//record[1].sample >>= 8;
 
 
 
@@ -36,11 +36,11 @@ void SSIAudioNewSampleCallback( union SSISample record[], union SSISample playba
 	playback[2].sample =  record[2].sample;
 	playback[3].sample =  record[3].sample;
 
-	playback[4].sample =  record[4].sample;
+	/*playback[4].sample =  record[4].sample;
 	playback[5].sample =  record[5].sample;
 
 	playback[6].sample =  record[6].sample;
-	playback[7].sample =  record[7].sample;
+	playback[7].sample =  record[7].sample;*/
 
 
 	//EQ filtering
@@ -66,11 +66,8 @@ void SSIAudioNewSampleCallback( union SSISample record[], union SSISample playba
 
 	// saturation and normalization of output
 	// (right justified -> left justified 24 bit in 32 bit number)
-	playback[0].sample = __SSAT(record[0].sample, 24)<<8;
-	playback[1].sample = __SSAT(record[1].sample, 24)<<8;
-
-
-
+	//playback[0].sample = __SSAT(record[0].sample, 24)<<8;
+	//playback[1].sample = __SSAT(record[1].sample, 24)<<8;
 }
 
 void SystemInit( void);
@@ -80,15 +77,15 @@ int main( void)
 
 	SystemInit();
 
+	//SSIAudioInit();
+
 	AudioADDAControlInit();
 	AudioADDAModePCM(1);
 
-	while(1);
 
-	// nezapomenout upravit debug pin!!!!
-	SSIAudioInit();
 
 	while(1);
+
 	return (0);
 }
 
@@ -109,10 +106,12 @@ void SystemInit( void)
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
 	HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
-	HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= 0x80;
+	HWREG(GPIO_PORTD_BASE + GPIO_O_CR)   |= 0x81;
 
 	HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
-	HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
+	HWREG(GPIO_PORTF_BASE + GPIO_O_CR)   |= 0x01;
+
+	GPIOPinTypeSSI(GPIO_PORTF_BASE, GPIO_PIN_0 );
 
 	returnCode = SysTick_Config(60000000/1000);      /* Configure SysTick to generate an interrupt every millisecond */
 

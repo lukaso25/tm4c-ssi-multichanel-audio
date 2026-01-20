@@ -20,7 +20,7 @@
 #include <stdint.h>
 
 /* this could be 2/4/8 with fixed mapping */
-#define SSIAUDIO_CHANNELS (2)
+#define SSIAUDIO_CHANNELS (4)
 
 
 /* structure definition for byte oriented SSI data transfers of samples */
@@ -38,10 +38,10 @@ union SSISample
 };
 
 /* sample buffer for playback */
-union SSISample SSIPlaySamples [SSIAUDIO_CHANNELS];
+extern union SSISample SSIPlaySamples[];
 
 /* sample buffer for record */
-union SSISample SSIRecSamples [SSIAUDIO_CHANNELS];
+extern union SSISample SSIRecSamples[];
 
 // public functions
 
